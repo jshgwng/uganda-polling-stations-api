@@ -17,6 +17,9 @@ class CreatePollingStationsTable extends Migration
             $table->id();
             $table->string("polling_station_code")->unique();
             $table->string("polling_station_name");
+            $table->integer("voter_count");
+            $table->integer("no_of_females");
+            $table->integer("no_of_males");
             $table->foreignId("parish_id")->constrained("parishes");
             $table->timestamps();
         });
