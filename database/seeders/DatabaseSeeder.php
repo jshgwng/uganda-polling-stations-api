@@ -13,6 +13,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            DistrictSeeder::class,
+            ConstituencySeeder::class,
+            SubCountySeeder::class,
+            ParishSeeder::class,
+            PollingStationSeeder::class,
+        ]);
     }
 }
