@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class District extends Model
 {
     use HasFactory;
-
+    protected $primaryKey = "district_code";
+    public $incrementing = false;
     protected $fillable = ["district_code", "district_name"];
 }
