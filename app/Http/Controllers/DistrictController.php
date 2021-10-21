@@ -15,7 +15,7 @@ class DistrictController extends Controller
     public function index()
     {
         $districts = District::select(["district_code", "district_name"])->get()->toJson(JSON_PRETTY_PRINT);
-        return response($districts, 200);
+        return response($districts);
     }
 
     /**
