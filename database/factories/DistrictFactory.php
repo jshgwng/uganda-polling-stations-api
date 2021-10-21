@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\District;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Carbon;
 
 class DistrictFactory extends Factory
 {
@@ -23,7 +24,7 @@ class DistrictFactory extends Factory
     {
         static $increment = 0;
         return 
-            ["district_code" => "01", "district_name" => "Apac"]
+            ["id" => strval($this->faker->unique()->randomDigit()),"district_code" => "01", "district_name" => "Apac", "created_at" => Carbon::now(), "updated_at" => Carbon::now()]
         ;
     }
 }
