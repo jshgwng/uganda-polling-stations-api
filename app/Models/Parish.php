@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Parish extends Model
 {
     use HasFactory;
-    protected $fillable = ["parish_code","parish_name","sub_county_id"];
+    protected $primaryKey = "parish_code";
+    public $incrementing = false;
+    protected $fillable = ["parish_code","parish_name","sub_county_code"];
 }

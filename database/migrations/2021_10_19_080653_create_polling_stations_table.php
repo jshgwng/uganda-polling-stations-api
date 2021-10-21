@@ -20,7 +20,8 @@ class CreatePollingStationsTable extends Migration
             $table->integer("voter_count");
             $table->integer("no_of_females");
             $table->integer("no_of_males");
-            $table->foreignId("parish_id")->constrained("parishes");
+            $table->string("fk_parish_code");
+            $table->foreign("fk_parish_code")->references("parish_code")->on("parishes")->on("parishes")->onUpdate("cascade")->onDelete("cascade");
             $table->timestamps();
         });
     }

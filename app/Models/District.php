@@ -11,4 +11,8 @@ class District extends Model
     protected $primaryKey = "district_code";
     public $incrementing = false;
     protected $fillable = ["district_code", "district_name"];
+
+    public function constitencies(){
+        return $this->hasMany(Constituency::class);
+    }
 }

@@ -17,7 +17,8 @@ class CreateSubCountiesTable extends Migration
             $table->id();
             $table->string("sub_county_code")->unique();
             $table->string("sub_county_name");
-            $table->foreignId("constituency_id")->constrained("constituencies");
+            $table->string("fk_constituency_code");
+            $table->foreign("fk_constituency_code")->references("constituency_code")->on("constituencies")->onUpdate("cascade")->onDelete("cascade");;
             $table->timestamps();
         });
     }

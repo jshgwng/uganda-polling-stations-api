@@ -17,7 +17,8 @@ class CreateConstituenciesTable extends Migration
             $table->id();
             $table->string("constituency_code")->unique();
             $table->string("constituency_name");
-            $table->foreignId("district_code")->constrained("districts");
+            $table->string("fk_district_code");
+            $table->foreign("fk_district_code")->references("district_code")->on("districts")->onUpdate("cascade")->onDelete("cascade");
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class ConstituencySeeder extends Seeder
     public function run()
     {
         $constituencies = [
-            ["constituency_code" => "02", "constituency_name" => "KWANIA COUNTY", "district_code" => 1]
+            ["constituency_code" => "02", "constituency_name" => "KWANIA COUNTY", "fk_district_code" => "01"]
         ];
 
         foreach ($constituencies as $constituency) {

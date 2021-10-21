@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Constituency extends Model
 {
     use HasFactory;
-    protected $fillable = ["constituency_code","constituency_name","district_id"];
+    protected $primaryKey = "constituency_code";
+    public $incrementing = false;
+    protected $fillable = ["constituency_code","constituency_name","district_code"];
+
+    public function district(){
+        return $this->belongsTo(District::class);
+    }
 }

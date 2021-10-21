@@ -15,8 +15,8 @@ class SubCountySeeder extends Seeder
     public function run()
     {
         $sub_counties = [
-            ["sub_county_code" => "01", "sub_county_name" => "ADUKU", "constituency_id" => 1],
-            ["sub_county_code" => "02", "sub_county_name" => "CAWENTE", "constituency_id" => 1],
+            ["sub_county_code" => "01", "sub_county_name" => "ADUKU", "fk_constituency_code" => "02"],
+            ["sub_county_code" => "02", "sub_county_name" => "CAWENTE", "fk_constituency_code" => "02"],
         ];
 
         foreach ($sub_counties as $sub_county) {

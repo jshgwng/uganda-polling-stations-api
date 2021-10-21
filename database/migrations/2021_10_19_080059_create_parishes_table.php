@@ -17,7 +17,8 @@ class CreateParishesTable extends Migration
             $table->id();
             $table->string("parish_code")->unique();
             $table->string("parish_name");
-            $table->foreignId("sub_county_id")->constrained("sub_counties");
+            $table->string("fk_sub_county_code");
+            $table->foreign("fk_sub_county_code")->references("sub_county_code")->on("sub_counties")->onUpdate("cascade")->onDelete("cascade");
             $table->timestamps();
         });
     }
