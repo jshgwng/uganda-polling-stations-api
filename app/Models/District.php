@@ -12,7 +12,7 @@ class District extends Model
     public $incrementing = false;
     protected $fillable = ["district_code", "district_name"];
 
-    public function constitencies(){
-        return $this->hasMany(Constituency::class);
+    public function constituencies(){
+        return $this->hasMany(Constituency::class, "fk_district_code");
     }
 }
