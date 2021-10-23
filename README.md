@@ -8,10 +8,49 @@ The API is built using LAravel PHP 8.0 with a MySQL database.
 ## API Endpoints
 
 1. `api/districts ` - This route returns all the districts. Each district is return with associated constituencies as a PHP collection.
-Sample response 
-    ```[ { "district_code": "01", "district_name": "Apac", "constituencies": [ { "id": 1, "constituency_code": "02", "constituency_name": "KWANIA COUNTY", "fk_district_code": "01", "created_at": "2021-10-21T16:28:22.000000Z", "updated_at": "2021-10-21T16:28:22.000000Z" } ] } ]```
-    
-2. ```api/districts/{district_code} ```
+Sample response data
+```
+[
+    {
+        district_code: "01",
+        district_name: "Apac",
+        constituencies: [
+                {
+                id: 1,
+                constituency_code: "02",
+                constituency_name: "KWANIA COUNTY",
+                fk_district_code: "01",
+                created_at: "2021-10-21T16:28:22.000000Z",
+                updated_at: "2021-10-21T16:28:22.000000Z"
+                }
+            ]
+    }
+]
+```
+
+2. `api/districts/{district_code} ` - Returns a single district with associated constituencies as a PHP collection. Sample response data
+
+``` 
+[
+    {
+        id: 1,
+        district_code: "01",
+        district_name: "Apac",
+        created_at: "2021-10-21T16:28:22.000000Z",
+        updated_at: "2021-10-21T16:28:22.000000Z",
+        constituencies: [
+                {
+                id: 1,
+                constituency_code: "02",
+                constituency_name: "KWANIA COUNTY",
+                fk_district_code: "01",
+                created_at: "2021-10-21T16:28:22.000000Z",
+                updated_at: "2021-10-21T16:28:22.000000Z"
+                }
+            ]
+    }
+]
+```
 3. ```api/districts/{district_code}/constituencies ```
 4. ```api/districts/{district_code}/constituencies/{constituency_code} ```
 5. ```api/districts/{district_code}/constituencies/{constituency_code}/sub_counties ```

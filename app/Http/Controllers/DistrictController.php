@@ -47,9 +47,8 @@ class DistrictController extends Controller
      */
     public function show($district_code)
     {
-        $district = District::find($district_code);
-
-        return response()->json([$district]);
+        $district = District::where("district_code", "=", 01)->with("constituencies")->get()->toJson(JSON_PRETTY_PRINT);
+        return response($district);
     }
 
     /**
