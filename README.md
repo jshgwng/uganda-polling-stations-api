@@ -51,14 +51,39 @@ Sample response data
     }
 ]
 ```
-3. ```api/districts/{district_code}/constituencies ```
-4. ```api/districts/{district_code}/constituencies/{constituency_code} ```
-5. ```api/districts/{district_code}/constituencies/{constituency_code}/sub_counties ```
-6. ```api/districts/{district_code}/constituencies/{constituency_code}/sub_counties/{sub_county_code} ```
-7. ```api/districts/{district_code}/constituencies/{constituency_code}/sub_counties/{sub_county_code}/parishes ```
-8. ```api/districts/{district_code}/constituencies/{constituency_code}/sub_counties/parishes/{parish_code} ```
-9. ```api/districts/{district_code}/constituencies/{constituency_code}/sub_counties/parishes/{parish_code}/polling_stations ```
-10. ```api/districts/{district_code}/constituencies/{constituency_code}/sub_counties/parishes/{parish_code}/polling_stations/{polling_station_code} ```
+
+3. `api/constituencies` - Returns all the constituencies and related sub counties.
+    Sample data
+```
+[
+    {
+        id: 1,
+        constituency_code: "02",
+        constituency_name: "KWANIA COUNTY",
+        fk_district_code: "01",
+        created_at: "2021-10-21T16:28:22.000000Z",
+        updated_at: "2021-10-21T16:28:22.000000Z",
+        sub_counties: [
+                {
+                id: 1,
+                sub_county_code: "01",
+                sub_county_name: "ADUKU",
+                fk_constituency_code: "02",
+                created_at: "2021-10-21T16:28:22.000000Z",
+                updated_at: "2021-10-21T16:28:22.000000Z"
+                },
+                {
+                id: 2,
+                sub_county_code: "02",
+                sub_county_name: "CAWENTE",
+                fk_constituency_code: "02",
+                created_at: "2021-10-21T16:28:22.000000Z",
+                updated_at: "2021-10-21T16:28:22.000000Z"
+                }
+            ]
+    }
+]
+```
 
 ## Contributing
 

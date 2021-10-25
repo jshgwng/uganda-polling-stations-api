@@ -15,4 +15,8 @@ class Constituency extends Model
     public function district(){
         return $this->belongsTo(District::class);
     }
+
+    public function subCounties(){
+        return $this->hasMany(SubCounty::class, "fk_constituency_code");
+    }
 }
